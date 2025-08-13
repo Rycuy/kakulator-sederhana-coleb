@@ -83,7 +83,6 @@ body {
 /* Tombol sama dengan */
 .btn[data-value="="] {
     background: #27ae60;
-    grid-column: span 2;
     border-radius: 40px;
 }
 
