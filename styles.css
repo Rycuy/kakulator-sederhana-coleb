@@ -1,0 +1,107 @@
+/* Reset dan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container utama */
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+    width: 320px;
+}
+
+/* Layar */
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #000;
+    color: #0ff;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.8);
+}
+
+/* Grid tombol */
+.numberButton {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Tombol umum */
+.btn {
+    height: 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #444;
+}
+
+/* Tombol operator */
+.btn[data-value="+"],
+.btn[data-value="-"],
+.btn[data-value="*"],
+.btn[data-value="/"],
+.btn[data-value="%"] {
+    background: #f39c12;
+}
+
+.btn[data-value="+"]:hover,
+.btn[data-value="-"]:hover,
+.btn[data-value="*"]:hover,
+.btn[data-value="/"]:hover,
+.btn[data-value="%"]:hover {
+    background: #d35400;
+}
+
+/* Tombol sama dengan */
+.btn[data-value="="] {
+    background: #27ae60;
+    grid-column: span 2;
+    border-radius: 40px;
+}
+
+.btn[data-value="="]:hover {
+    background: #1e8449;
+}
+
+/* Tombol AC & DEL */
+.btn[data-value="AC"] {
+    background: #e74c3c;
+}
+.btn[data-value="DEL"] {
+    background: #c0392b;
+}
+
+.btn[data-value="AC"]:hover {
+    background: #c0392b;
+}
+.btn[data-value="DEL"]:hover {
+    background: #922b21;
+}
