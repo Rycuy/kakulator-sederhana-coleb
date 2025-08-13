@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll('.btn');
 const toggleBtn = document.getElementById("toggleTheme");
 
 let expression = "";
+const operators = ['+', '-', '*', '/', '%'];
 
 // Kalkulator
 buttons.forEach(button => {
@@ -24,6 +25,12 @@ buttons.forEach(button => {
                 expression = '';
             }
         } else {
+            if (operators.includes(value) && operators.includes(expression.slice(-1))) {
+                expression = expression.slice(0,-1)+ value
+                display.value = expression
+                return; 
+            }
+
             expression += value;
             display.value = expression;
         }
